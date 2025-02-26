@@ -1,2 +1,0 @@
-# angular-learning
-Learn angular
