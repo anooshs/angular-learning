@@ -1,6 +1,27 @@
 <router-outlet />
-{{title}}
+{{ title }}
 
 <h1>Counter: {{ count() }}</h1>
 <button (click)="reset()">Reset</button>
 <button (click)="increment()">Increment</button>
+
+@if(count() === 1) {
+<p>If condition</p>
+} @else {
+<p>else condition</p>
+}
+
+<!-- <div style="height: 300px; width: 200px; overflow-y: auto">
+  <div *ngFor="let item of items; let i = index" class="item-{{ i }}">
+    {{ item.name }}
+  </div>
+</div> -->
+
+<cdk-virtual-scroll-viewport
+  itemSize="40"
+  style="height: 300px; width: 200px; overflow-y: auto"
+>
+  <div *cdkVirtualFor="let item of items; let i = index" class="item-{{ i }}">
+    {{ item.name }}
+  </div>
+</cdk-virtual-scroll-viewport>
